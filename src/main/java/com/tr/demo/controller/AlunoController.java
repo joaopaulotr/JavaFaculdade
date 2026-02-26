@@ -3,15 +3,12 @@ package com.tr.demo.controller;
 import com.tr.demo.models.AlunoModel;
 import com.tr.demo.services.AlunoService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-@RequestMapping(path = "/schools/aluno")
+@RequestMapping(path = "/schools/alunos")
 
 public class AlunoController {
 
@@ -21,6 +18,16 @@ public class AlunoController {
     @GetMapping
     public List<AlunoModel> findAll(){
         return alunoService.findAll();
+    }
+
+    @PostMapping
+    public AlunoModel criarAluno(@RequestBody AlunoModel alunoModel){
+        return alunoService.criarAluno(alunoModel);
+    }
+
+    @DeleteMapping("/{id}")
+    public void deletarAluno(@PathVariable Long id){
+        alunoService.deletarAluno(id);
     }
 
 }
