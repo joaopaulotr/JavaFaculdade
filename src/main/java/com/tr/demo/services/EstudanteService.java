@@ -29,4 +29,8 @@ public class EstudanteService {
         estudanteRepository.deleteById(id);
     }
 
+    public EstudanteModel findEstudanteById(Long id){
+        return estudanteRepository.findById(id).get();
+    }
+
 }

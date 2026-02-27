@@ -24,4 +24,8 @@ public class AlunoService {
     public void deletarAluno(Long id){
         alunoRepository.deleteById(id);
     }
+
+    public AlunoModel findAlunoById(Long id){
+        return alunoRepository.findById(id).get();
+    }
 }
