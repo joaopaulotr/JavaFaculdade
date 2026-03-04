@@ -1,6 +1,7 @@
 package com.tr.demo.controller;
 
 import com.tr.demo.models.AlunoModel;
+import com.tr.demo.models.EstudanteModel;
 import com.tr.demo.services.AlunoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -25,9 +26,8 @@ public class AlunoController {
         return alunoService.criarAluno(alunoModel);
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/{id }")
     public void deletarAluno(@PathVariable Long id){
         alunoService.deletarAluno(id);
     }
-
 }

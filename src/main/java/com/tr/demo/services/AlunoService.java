@@ -1,6 +1,7 @@
 package com.tr.demo.services;
 
 import com.tr.demo.models.AlunoModel;
+import com.tr.demo.models.EstudanteModel;
 import com.tr.demo.repositories.AlunoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -28,4 +29,5 @@ public class AlunoService {
     public AlunoModel findAlunoById(Long id){
         return alunoRepository.findById(id).get();
     }
+
 }

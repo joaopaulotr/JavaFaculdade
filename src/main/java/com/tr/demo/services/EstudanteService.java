@@ -33,4 +33,10 @@ public class EstudanteService {
         return estudanteRepository.findById(id).get();
     }
 
+    public EstudanteModel atualizarEstudante(Long id, EstudanteModel estudanteModel){
+        EstudanteModel newEstudante =  estudanteRepository.findById(id).get();
+        estudanteModel.setNome(newEstudante.getNome());
+        return estudanteRepository.save(newEstudante);
+    }
+
 }
